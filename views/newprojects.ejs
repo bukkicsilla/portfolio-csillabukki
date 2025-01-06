@@ -3,45 +3,54 @@
 </head>
 
 <body>
-  <%- include('include/header') %>
-  <%- include('include/responsive') %>
+  <%- include('include/header') %> <%- include('include/responsive') %>
   <main>
     <section id="frontend-apps">
       <h1>Frontend Projects</h1>
-       <ul>
-         <% for (const app of apps) { %>
-           <% if (app.frontend) { %>
-          <li class="new-item"> 
-            <article>
-              <a href="/new-projects/<%= app._id%>">
-            <img src="<%= app.path %>"/> </a>
-              <h2><%= app.name %>  </h2>
-            </article>
-            </li>
-          <% } %>
-          <% } %>
-       </ul>
-        </section>
-        <section id="fullstack-apps">
-          <h1>Full Stack Projects</h1>
-            <ul>
-         <% for (const app of apps) { %>
-           <% if (!app.frontend) { %>
-          <li class="new-item"> 
-            <article>
-              <a href="/new-projects/<%= app._id%>">
-            <img src="<%= app.path %>"/></a>
-              <h2><%= app.name %>  </h2>
-            </article>
-            </li>
-          <% } %>
-          <% } %>
-       </ul>
-
-          
-        </section>
+      <ul>
+        <% for (const app of apps) { %> <% if (app.frontend) { %>
+        <li class="new-item">
+          <article>
+            <a href="/new-projects/<%= app._id%>">
+              <img src="<%= app.path %>" />
+            </a>
+            <h2><%= app.name %></h2>
+          </article>
+        </li>
+        <% } %> <% } %>
+      </ul>
+    </section>
+    <section id="fullstack-apps">
+      <h1>Full Stack Projects</h1>
+      <ul>
+        <% for (const app of apps) { %> <% if (!app.frontend) { %>
+        <li class="new-item">
+          <article>
+            <a href="/new-projects/<%= app._id%>">
+              <img src="<%= app.path %>"
+            /></a>
+            <h2><%= app.name %></h2>
+          </article>
+        </li>
+        <% } %> <% } %>
+      </ul>
+    </section>
+    <section id="old-resume">
+      <h1>Archive Resume</h1>
+      <ul>
+        <li class="new-item">
+          <article>
+            <a
+              href="https://fe544f16-dade-44ca-96e0-9658cd196b5f-00-1sln8pe7fc35q.janeway.replit.dev:5000/"
+              target="_blank"
+            >
+              <img src="images/oldresume.png" />
+            </a>
+            <h2>Projects</h2>
+          </article>
+        </li>
+      </ul>
+    </section>
   </main>
   <%- include('include/footer') %>
 </body>
-
-</html>
