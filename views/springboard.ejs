@@ -37,9 +37,34 @@
     </section>
     <section id="sb-js">
       <h1>JavaScript Projects</h1>
+      <ul>
+        <% for (const app of apps) { %> <% if (app.category === "javascript") {
+        %>
+        <li class="new-item">
+          <article>
+            <a href="/springboard/<%= app._id%>">
+              <img src="<%= app.path %>" />
+            </a>
+            <h2><%= app.name %></h2>
+          </article>
+        </li>
+        <% } %> <% } %>
+      </ul>
     </section>
     <section id="sb-react">
       <h1>React Projects</h1>
+      <ul>
+        <% for (const app of apps) { %> <% if (app.category === "react") { %>
+        <li class="new-item">
+          <article>
+            <a href="/springboard/<%= app._id%>">
+              <img src="<%= app.path %>" />
+            </a>
+            <h2><%= app.name %></h2>
+          </article>
+        </li>
+        <% } %> <% } %>
+      </ul>
     </section>
   </main>
   <%- include('include/footer') %>
